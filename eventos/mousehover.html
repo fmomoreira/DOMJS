@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  <form id="loginForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required><br><br>
+
+    <button type="submit">Salvar</button>
+</form>
+
+
+<div>
+    <span  id="DicaComoPreencherForm">Como preencher o formulário?</span>
+</div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Impede que a página seja recarregada
+
+        var email = document.getElementById("email").value;
+        var senha = document.getElementById("senha").value;
+
+        // Exibe o email e senha em um alert
+        alert("Email: " + email + "\nSenha: " + senha);
+
+        // Limpa os campos do formulário
+        document.getElementById("email").value = "";
+        document.getElementById("senha").value = "";
+    });
+
+    document.getElementById("DicaComoPreencherForm").addEventListener("mouseover", function() {
+            // Lógica a ser executada quando o mouse passar sobre o elemento
+            alert('Preencha o email cadastrado e a senha cadastrada para poder entrar no sistema')
+        });
+</script>
+</body>
+</html>

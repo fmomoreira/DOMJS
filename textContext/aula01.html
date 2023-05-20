@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo de troca de conteúdo de texto</title>
+</head>
+<body>
+    <div id="meuDiv">
+        <p id="meuParagrafo">Item 1</p>
+    </div>
+
+    <button onclick="trocarTexto()">Trocar Texto</button>
+
+    <script>
+        function trocarTexto() {
+            var paragrafo = document.getElementById("meuParagrafo");
+            paragrafo.textContent = "Item 2";
+        }
+    </script>
+</body>
+</html>

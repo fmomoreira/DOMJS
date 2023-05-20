@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo de troca de classe CSS</title>
+    <style>
+        .quadrado {
+            width: 100px;
+            height: 100px;
+        }
+
+        .azul {
+            background-color: blue;
+        }
+
+        .amarelo {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="quadrado azul" id="meuQuadrado"></div>
+
+    <button onclick="trocarClasse('amarelo')">Trocar para Amarelo</button>
+    <button onclick="trocarClasse('azul')">Trocar para Azul</button>
+
+    <script>
+        function trocarClasse(classe) {
+            var quadrado = document.getElementById("meuQuadrado");
+            quadrado.className = "quadrado " + classe;
+        }
+    </script>
+</body>
+</html>

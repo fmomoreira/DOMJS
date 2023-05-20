@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Tarefas</title>
+    <style>
+        .tarefa {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Tarefas</h1>
+
+    <input type="text" id="tarefaInput" placeholder="Digite uma tarefa" onkeydown="verificarTecla(event)">
+    <button onclick="adicionarTarefa()">Adicionar Tarefa</button>
+
+    <div id="listaTarefas"></div>
+
+    <script>
+        function adicionarTarefa() {
+            var tarefaInput = document.getElementById("tarefaInput");
+            var tarefa = tarefaInput.value;
+
+            if (tarefa.trim() !== "") {
+                var listaTarefas = document.getElementById("listaTarefas");
+                var novaTarefa = document.createElement("div");
+                novaTarefa.className = "tarefa";
+                novaTarefa.innerHTML = tarefa;
+                listaTarefas.appendChild(novaTarefa);
+
+                tarefaInput.value = "";
+            }
+        }
+
+        function verificarTecla(event) {
+          //  console.log(event.keyCode) mostrar pra galera como pegar os eventos
+            if (event.keyCode === 13) {
+                adicionarTarefa();
+                event.preventDefault(); // Impede o envio do formulário (recarregar a página)
+            }
+        }
+    </script>
+</body>
+</html>
